@@ -13,7 +13,11 @@ public class ClienteController {
 
 	@GetMapping("/clientes")
 	public List<Cliente> listar() {
-		var cliente = new Cliente(1L, "joao sdasd", "gmail", "323");
+		Cliente cliente = new Cliente();
+		cliente.setId(1L);
+		cliente.setNome("joao sdasd");
+		cliente.setEmail("gmail");
+		cliente.setTelefone("321");
 		var cliente1 = new Cliente(2L, "joa", "gmai", "324");
 		var cliente2 = new Cliente(3L, "jo", "gma", "325");
 		
