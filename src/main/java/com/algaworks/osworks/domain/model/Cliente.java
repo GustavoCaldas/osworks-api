@@ -1,16 +1,29 @@
 package com.algaworks.osworks.domain.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor @AllArgsConstructor
+@Entity
+@AllArgsConstructor @NoArgsConstructor 
+@EqualsAndHashCode(of = {"id"})
 public class Cliente {
 	
-	@Getter @Setter private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Getter private Long id;
 	@Getter @Setter private String nome;
 	@Getter @Setter private String email;
-	@Getter @Setter private String telefone;
+	
+	@Column(name = "telefone")
+	@Getter @Setter private String fone;
 	
 }
